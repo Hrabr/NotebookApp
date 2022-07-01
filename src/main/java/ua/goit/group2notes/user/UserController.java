@@ -82,9 +82,9 @@ public class UserController {
 
     @PostMapping(path = "/registration")
     public String registerUser(@ModelAttribute("userDto") @Valid UserDto userDto, BindingResult bindingResult, Model model, Authentication authentication) {
-        if (bindingResult.hasErrors()) {
-            return "registration";
-        }
+//        if (bindingResult.hasErrors()) {
+//            return "registration";
+//        }
         try {
             userDto.setUserRole(UserRole.ROLE_USER);
             userDto.setPassword(passwordEncoder.encode(userDto.getPassword()));
